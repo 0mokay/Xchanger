@@ -1,0 +1,363 @@
+v2.3.1 (2019-08-07)
+* Added a version check when importing from file or URL.
+
+v2.3.0 (2019-07-30)
+* Migrated from Semantic UI to Bootstrap.
+* Slightly modified group editor UI (#282).
+* Fixed bug where certain fields were not replaced (#202).
+* Improved workflow when adding substitutions (#250).
+* Added a help item in menus pointing to the FAQ.
+* Updated XRegExp to version 4.2.4.
+
+v2.2.3 (2019-05-23)
+* Fixed bug where the input type dropdown was badly positioned (#248).
+* Shortcut to open the replace bar changed to Ctrl+Shift+F9 (#266).
+* Translated names of shortcut keys.
+
+v2.2.2 (2018-11-23)
+* Fixed bug introduced in v2.2.1 (#260).
+
+v2.2.1 (2018-11-22)
+* Consecutive groups with the same HMTL mode are applied at once without intermediate renders (where possible) to improve performance (#126).
+* Cursor position or selection in text boxes is preserved (#15).
+* Minor tweaks.
+
+v2.2.0 (2018-03-19)
+* The "Apply automatic substitutions on page load" item in the Tools menu is correctly initialized.
+* Column widths and order are saved.
+* Added checks to prevent saving substitutions with invalid regular expressions (#223, #236).
+* Several UI improvements (#226):
+  - Options are now saved automatically.
+  - Added a confirmation before clearing the substitution list and moved the clear button to the right end.
+  - The edit group button is larger and more separated from the remove button.
+  - Substitution groups can be edited with double click.
+  - The Delete key no longer removes the whole substitution while it's being edited.
+* Updated ag-Grid to version 14.2.0.
+
+v2.1.0 (2017-11-28)
+* Added 3 modes for substitution groups (#206):
+  - auto: used in auto-replace on load and auto-replace every n seconds
+  - manual: used when manually applying the substitution list
+  - auto&manual (default): used in both cases, equivalent to previous versions
+* New list format 2.1 to include the mode.
+* Dropped support for substitution lists in the 0.13 format.
+* Context menu is now optional (#229).
+* Fixed header names in substitutions tab in options.
+* Fixed apply substitution list from the Tools menu (#230).
+* Correct shortcuts shown in the toolbar button menu on all platforms (#230).
+
+v2.0.0 (2017-10-13)
+* Finished conversion to WebExtension.
+* Replace bar has been transformed into a sidebar until WebExtensions support toolbars.
+* Enabled translation.
+* Fixed bug about the subscription warning not showing sometimes.
+* Fixed bug related to subscription causing it to update very fast forever.
+* Fixed export (#222).
+* DOMParser is used instead of innerHTML.
+* Compatibility with Firefox 57 and later.
+
+v1.1.3 (2017-08-28)
+* Corrected a wrong string.
+* Added a warning about potential security and privacy issues when using subscription.
+
+v1.1.2 (2017-08-17)
+* Fixed another bug in v1.1.0 in which the replace bar didn't follow current preferences.
+
+v1.1.1 (2017-08-17)
+* Fixed a bug introduced in v1.1.0 in which the input type was not properly saved.
+* Compatibility with Firefox 55 and 56.
+
+v1.1.0 (2017-07-30)
+* Substitutions are applied when the main page has loaded, without waiting for other resources.
+* Substitutions list and preferences saved in the embedded WebExtension's local storage.
+* Options page moved to the embedded WebExtension.
+* Subscription and periodic replace functions also moved to the embedded WebExtension.
+* Toolbar button also moved to the embedded WebExtension.
+* Fixed some errors in initialization.
+* Changed the shortcut to apply the substitution list to Ctrl+F9 because Shift+F9 is now used by Firefox.
+* Compatibility with Firefox 55.0 and later.
+
+v1.0.0 (2017-03-13)
+* Converted to restartless (bootstrapped) addon with embedded WebExtension.
+* Made multiprocess compatible.
+* Changed license to GPLv3 or later.
+* Compatibility with Firefox 51.0a1 and later.
+
+v0.17.3 (2016-09-29)
+* Fixed bug introduced in the previous version that manifested itself with textareas with default values (#183).
+
+v0.17.2 (2016-09-27)
+* Fixed bug about an innocuous substitution changing the cursor position in some textboxes (#148).
+* Fixed bugs related to changes in Firefox 49 (#179, #181).
+* Performance improvement (#126).
+* Compatibility with Firefox up to 52.
+
+v0.17.1 (2015-11-17)
+* Fixed bug about the options window being always opened as a modal dialog.
+* Fixed bug about the OK and More info buttons not working in Firefox 44 (#169).
+* Updated homepage link.
+* Updated help.
+* If the help tab is already open, it is shown instead of opening a new one.
+* Compatibility with Firefox up to 46.
+
+v0.17.0 (2015-09-19)
+* Asynchronous input/output.
+* Save the substitution list to a file instead of preferences to allow bigger lists (issue 145).
+* Animated showing and hiding of the replace bar.
+* Removed support to substitution lists in XML.
+* Changed shortcuts because Shift+F8 is for the WebIDE. The new ones are F9 to show the replace bar and Shift+F9 to apply the substitution list (issue 154).
+* Fixed subscription to a local URL for Firefox 35+ (issue 157).
+* Corrected typo in English help file (issue 165).
+* Compatibility with Firefox from 30.0 to 44.0.
+* New locale:
+  - ja (by Bruno Lopes)
+
+v0.16.1 (2014-06-13)
+* Fixed issue with the auto-replace on load option on the toolbar button menu showing incorrect values in some cases (issue 142).
+* Fixed bug where the substitution group editor ok button failed when not all the URLs were visible (issue 139).
+
+v0.16.0 (2014-05-31)
+* Updated toolbar icons for Australis.
+* Moved toolbar close button to the right to match newer Firefox versions.
+* Unconfirmed changes (i.e. additions or editions) in substitution groups are automatically confirmed when pressing the dialog OK button (issue 125).
+* The replace bar is hidden when the ESC key is pressed (issue 107).
+* Pressing the return key when focus is in one of the text fields applies the replace bar substitution (issue 107).
+* New option to periodically apply the substitution list (issue 129). This allows to overcome the limitation with dynamic content in some cases.
+* Updated shortcuts in the options dialog (issue 108).
+* Compatibility with Firefox up to 33.0.
+* New locale:
+  - ast-ES (by alministradores@softastur.org)
+
+v0.15.0 (2013-08-03)
+* Textboxes in the replace bar use as much width as they can.
+* Change event is fired when a substitution changes text in an input or textarea element (issue 49).
+* Updated icon sizes.
+* Substitutions with HTML only in the output (issue 5).
+* Updated help (issue 110).
+* Disabled tr locale (was reported as bad translation).
+* New substitution groups enabled by default in the substitution group editor.
+* Improved substitution list behaviour in options dialog (issue 112).
+* Changed the code to open the options dialog to take into account several features (issues 98 and 66).
+* Moved the descriptions of the options and substitution group editor dialogs to a tooltip showable with a "more info" button to remove clutter.
+* Made the options and substitution group editor dialogs resizable on all platforms (when open from FoxReplace UI) (issue 100). The sizes are persistent.
+* Compatibility with Firefox up to 26.0.
+
+v0.14.0 (16-1-2013)
+* Removed compatibility with the substitution list in the 0.10 format.
+* Substitution groups now have names. This implies a new list format: 0.14.
+* Changed shortcuts because Shift+F2 is used for the developer toolbar in Firefox 16 (issue 87).
+* Exclusion URLs can be used without normal URLs, so you can apply substitutions to all URLs except a few ones (issue 92).
+* Replace bar again appears just below the find bar, without any other bar in between.
+* New option to allow inline scripts to be replaced (issue 17).
+* Updated help file to clarify some concepts about regular expressions (issue 85).
+* Substitution groups can be enabled or disabled (issue 33).
+* Text replaced in all body elements (issue 62).
+* Pretty printing of exported JSON file (issue 96).
+* HTML substitutions are made on the html node instead of the body (issues 21, 64 and 76).
+* Column settings on the options dialog are persistent (issue 103).
+* Compatibility with Firefox up to 21.0a1.
+
+v0.13.3 (18-8-2012)
+* Changed behaviour of "whole words" feature. Now it supports all Unicode letters thanks to XRegExp and distinguishes between word characters, non-word
+  characters, and spaces or separators. This solves issue 36.
+
+v0.13.2 (18-7-2012)
+* Fixed bug of auto-replace not working in OS X (issue 80).
+* Compatibility with Firefox up to 17.0a1.
+
+v0.13.1 (5-7-2012)
+* Fixed bug in loading input type from JSON (a.k.a. "undefined" error) (issue 70).
+* Fixed bug in importing from XML when there was more than one URL (issue 71).
+
+v0.13.0 (1-7-2012)
+* Subscription works from local files (URL file://...) (issue 25).
+* Updated RegExp link in help file (issue 28).
+* Added new XPaths to select text nodes (issues 35, 53).
+* Fixed bug causing double substitution in title (issue 63).
+* Fixed bug causing double substitution sometimes in textareas (issue 63).
+* Substitution list stored and exported as JSON (0.13) instead of XML (issue 67). XML kept as read-only.
+* Integration with the Firefox app menu.
+* Display of substitution list is updated after each subscription update.
+* Status of subscription displayed in options window.
+* Fixed instantiation of XMLHttpRequest for import from URL.
+* Compatibility with Firefox 4 to 15.
+* New locales:
+  - lt (by Algimantas Margevičius)
+  - sv-SE (by Lakrits)
+  - zh-TW (by 林郁翔)
+
+v0.12.2 (10-8-2009)
+* Bugfix: the modules directory wasn't included in the XPI.
+
+v0.12.1 (5-8-2009)
+* Added minimum width to some columns in the options and substitution group editor dialogs.
+* Substitution group editor modified to reduce height.
+* New locale:
+  - zh-CN (by yfdyh000).
+
+v0.12.0 (21-7-2009)
+* Subscription to update the substitution list periodically from an URL.
+* Ability to use backslash-escaped characters in input (text and whole words) and output. Supported characters are \\ (backslash), \n (new line), \r (carriage
+  return) and \t (tab).
+* New list format 0.12 with the new interpretation of the backslash-escaped characters.
+* Removed compatibility with the substitution list in the 0.8 format.
+* Removed compatibility with Firefox 1.5 and 2.
+* Compatibility with Firefox 3.5.
+* New locale:
+  - nl-NL (by markh van BabelZilla.org).
+
+v0.11.0 (25-4-2009)
+* Import from URL.
+* Whole words substitutions now support the extended Latin alphabet, IPA extensions, and the Greek, Coptic and Cyrillic alphabets.
+* "Clear" buttons in all dialogs disabled if their respective lists are empty.
+* Forced text color of input textbox so it's visible with dark themes.
+* Removed compatibility with the substitution list in the old 0.7 format.
+* Compatibility with Firefox 3.1b3.
+* Removed unneeded box "xmlHolder" in options.xul.
+* New locale:
+  - tr-TR (by eren).
+
+v0.10.0 (25-1-2009)
+* Exclusion URLs.
+
+v0.9.1 (26-12-2008)
+* Compatibility with Firefox 3.1b2.
+* New locales:
+  - ko-KR (by 용오름(Wtspout)).
+  - ro-RO (by alexxed).
+  - sr-RS (by Касперски ~ РС).
+
+v0.9.0 (22-11-2008)
+* HTML substitutions.
+* Editable URLs and substitutions.
+* Edit, delete and move buttons in options dialog disabled when there is no item selected.
+* Updated help.
+* No methods added to prototypes of standard global objects (to avoid possible conflicts).
+* Revised binding for input textbox.
+* Compatibility with Firefox 3.1b1.
+
+v0.8.0 (20-9-2008)
+* Whole words option integrated in the XBL input textbox.
+* Per-site substitution: now you can define a list of substitution groups, where every group has an URL list and a substitution list; the substitutions are
+  applied only if the URL of the current page matches one of the URLs in the list or if the list is empty.
+* Substitution list stored in XML.
+* Updated help.
+* Some skin changes.
+* Removed special skin for macfoxIIgraphite because it's not compatible with Firefox 3.
+* New prototypes for FxRSubstitution and FxRSubstitutionGroup.
+
+v0.7.3 (18-8-2008)
+* Less crowded replace bar (new input textbox with XBL).
+* New XBL input textbox also in options dialog.
+* Better replace bar theme for macfoxIIgraphite.
+
+v0.7.2 (5-8-2008)
+* Corrected description in foxreplace.properties. It was cut with a \ at the end, creating a bug that didn't allow to import a replace list.
+* New locale:
+  - de-DE (by CosmicForce).
+
+v0.7.1 (15-7-2008)
+* URL substitutions (thanks to Lutay Sergey).
+* Replace only whole words (thanks to Пирятинский Виталий for the suggestion).
+* Entitized help (thanks to Goofy).
+* New locales:
+  - fr-FR (by Jojaba - BabelZilla).
+  - pl-PL (by Wacław Jacek).
+  - pt-BR (by Alberto Eidh).
+  - ru-RU (by Пирятинский Виталий).
+
+v0.7.0 (8-6-2008)
+* Support for regular expressions.
+* HTML help.
+* Own style for the close button of the replace bar.
+* Compatibility with Firefox 3.0.*.
+* New replacing system completely based on XPath.
+* "replace" method in FxRSubstitution prototype.
+* Getters in foxreplaceIO.
+
+v0.6.1 (1-5-2008)
+* Compatibility with Firefox 1.5.
+* More encoded characters ('\n', '\r') in the substitution list.
+
+v0.6.0 (30-4-2008)
+* Instant replace toolbar instead of dialog.
+* Auto width in options dialog (to override Noia 2.0 (eXtreme) fixed width).
+* "Add" button disabled in options dialog if "Replace" field is empty.
+* Updated icons for default theme.
+* Updated help.
+* Fixed bug with case sensitivity.
+* Naming changes.
+* Standard substitution prototype.
+* Use of XUL commands.
+
+v0.5.5 (23-4-2008)
+* Keyboard shortcuts fix (they didn't work in some cases).
+
+v0.5.4 (22-4-2008)
+* Compatibility with Firefox 3.0b5.
+* Case-sensitivity.
+
+v0.5.3 (30-12-2007)
+* Help.
+* Keyboard shortcut visible in context menu.
+* Better description.
+
+v0.5.2 (28-12-2007)
+* Removed toolbar button context menu. It's no longer necessary because the button is now a "menu-button".
+* Bugfix on append/overwrite dialog: wrong function name.
+* Bugfix on toolbar button menu: button's oncommand was also executed.
+* Auto-replace on load now works on all tabs.
+* Revised access keys.
+* Focus returns to input string after adding a substitution in options dialog.
+* Workaroud to get correct height for listbox in the options dialog if there isn't any substitution.
+* Revised coding style.
+* Better documentation.
+* Localized description.
+
+v0.5.1 (25-12-2007)
+* Cleanup of unused files.
+* Better documentation.
+* Append/overwrite dialog:
+  - Reversed button order on GNU/Linux (cancel at left).
+  - Correction in en-US localization.
+* Instant replace dialog:
+  - Corrected alignment of labels and textboxes.
+  - Textboxes width set in stylesheet.
+  - Don't accept if the input string textbox is empty.
+* Options dialog:
+  - Auto height in stylesheet to ensure visibility of all controls with themes that set a fixed height (like Noia 2.0 (eXtreme)).
+* New icons based on an icon from OSX Iconset at GNOME-Look (http://www.gnome-look.org/content/show.php/OSX+Iconset?content=71334) by rpgmaker.
+* New keyboard shortcuts.
+* New toolbar button menu.
+* Changed some strings.
+* Two skins.
+* Tested compatibility with Firefox 3.0b2.
+
+v0.5.0 (15-12-2007)
+* New FoxReplace submenu in Tools, replacing the old Replace command.
+* Replacing done only with strings (i.e. not creating a RegExp with the input string).
+* Instant replace (Edit -> Replace...).
+* Import: custom append/overwrite dialog.
+* Options dialog: ListBox with 20 rows and a separator at the end (to ensure visibility of the Export button with some themes (like macfoxIIgraphite)).
+* Auto-replace on page load: now, this can be a filter.
+* Default filename for import and export.
+
+v0.4.0 (10-12-2007)
+* Import and export.
+
+v0.3.0 (3-12-2007)
+* Substitutions in texts of all visible form elements.
+
+v0.2.0 (2-12-2007)
+* Escaping of special characters when saving substitution list as string.
+* Replacing implementation changed. Now is based on code in chrome://global/content/findBar.js. It's faster and finds only visible text.
+* Substitutions in document title.
+* Added buttons to move up, move down, delete and clear substitutions from substitution list.
+
+v0.1.0 (24-11-2007)
+* Add and remove substitutions from options dialog.
+* Perform substitutions.
+* Locales: ca-AD, en-US.
+
+v0.0.0 (21-11-2007)
+* Hello world.

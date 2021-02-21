@@ -1,0 +1,75 @@
+{
+
+  "manifest_version": 2,
+  "name": "Xchanger",
+  "version": "1.4.1",
+  "default_locale": "en",
+
+  "applications": {
+    "gecko": {
+      "id": "fox@replace.fx",
+      "strict_min_version": "57.0"
+    }
+  },
+
+  "author": "Marc Ruiz Altisent",
+  "homepage_url": "https://github.com/Woundorf/foxreplace",
+
+  "description": "__MSG_extensionDescription__",
+
+
+
+  "content_security_policy": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline'",
+
+  "permissions": ["<all_urls>", "alarms", "menus", "downloads", "storage"],
+
+  "icons": {
+    "16": "icons/x16.png",
+    "32": "icons/x32.png",
+    "48": "icons/x32.png",
+    "96": "icons/x64.png"
+  },
+
+  "background": {
+    "scripts": ["lib/xregexp-all.js", "scripts/core.js", "scripts/periodicreplace.js", "scripts/storage.js", "scripts/subscription.js", "scripts/background.js"]
+  },
+
+  "content_scripts": [
+    {
+	      "all_frames": true,
+      "matches": ["*://vsagent.bet9ja.com/*"],
+      "css":["css/content.css"],
+      "js": ["js/debit.js","scripts/after.js", "popup/test.js", "lib/xregexp-all.js", "scripts/core.js", "scripts/replace.js", "scripts/storage.js", "scripts/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/x16.png",
+      "32": "icons/x32.png",
+      "64": "icons/x64.png"
+    },
+    "default_popup": "popup/toolbarbutton.html",
+    "browser_style": true
+  },
+
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F9"
+      },
+      "description": "Show the replace bar"
+    },
+    "apply-substitution-list": {
+      "suggested_key": {
+        "default": "Ctrl+F9"
+      },
+      "description": "Apply the current substitution list"
+    }
+  }
+
+
+}

@@ -1,0 +1,22 @@
+.percent{
+  background:none;
+  width:50px;
+  font-size:13px;
+  text-align:center;
+  padding:0px;
+  border: 1px #28a745 dotted;
+}
+.percents{
+display:inline;
+}
+#backB,#nextB{
+margin: 5px;
+}
+#codeB{
+    float: right;
+}
+
+#refreshB{
+  width: 50% !important;
+  margin-left: 25%;
+}
